@@ -83,12 +83,16 @@ void outstruct()
 {
 	struct	database data[4];
 	int		i = 0;
+	int		value = 0;
 
 	printf("struct type 5\n\r");
 
 	for(i=0;i<5;i++)
 	{
-		printf("%d\n\r", (int)&data[i]);
+		printf("%d\t", (int)&data[i]);
+
+		value = (int)&data[i] - (int)&data[i-1];
+		printf("val:%d\n\r", value);
 	}
 }
 
