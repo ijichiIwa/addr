@@ -89,10 +89,18 @@ void outstruct()
 
 	for(i=0;i<5;i++)
 	{
-		printf("%d\t", (int)&data[i]);
+		printf("%d\n", (int)&data[i]);
 
-		value = (int)&data[i] - (int)&data[i-1];
-		printf("val:%d\n\r", value);
+		if(i>=1)
+		{
+			value = (int)&data[i] - (int)&data[i-1];
+					printf("val:%d\n\r", value);
+		}
+		else
+		{
+			value = (int)&data[1] - (int)&data[0];
+					printf("val:%d\n\r", value);
+		}
 	}
 }
 
