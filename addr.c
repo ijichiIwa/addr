@@ -81,11 +81,15 @@ void outdouble()
 
 void outstruct()
 {
-	struct	database data;
+	struct	database data[4];
+	int		i = 0;
 
+	printf("struct type 5\n\r");
 
-	printf("struct type\n\r");
-	printf("%d\n\r", (int)&data);
+	for(i=0;i<5;i++)
+	{
+		printf("%d\n\r", (int)&data[i]);
+	}
 }
 
 int main(void) {
