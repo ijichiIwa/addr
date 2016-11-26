@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <conio.h>
 
-void ErrorCheck(int eNumL)
+int ErrorCheck(int eNumL)
 {
 	// проверяем что число меньше 2.
 	if(eNumL<2)
 		{
 			printf("Error!");
 			getch();
-			exit(1);
+			return 0;
 		}
+	return 1;
 }
 
 short EnterNum()
@@ -79,7 +80,7 @@ int main(void) {
 	short		eNum = 0;
 
 	eNum = EnterNum(); //записываем полученное число.
-	ErrorCheck(eNum); //проверяем полученное число.
+	if(!ErrorCheck(eNum)) return 0; //проверяем полученное число.
 	CheckNum(eNum); //передаем полученое число на вычисления и вывод.
 
 	getch();
